@@ -52,7 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!dateInput.value) flagField(dateInput);
 
     const timeInput = document.getElementById('moveOutTime');
-    if (!timeInput.value) flagField(timeInput);
+    if (!timeInput.value) {
+      flagField(timeInput);
+    } else if (timeInput.value > '11:00') {
+      flagField(timeInput);
+    }
 
     // 2. Extend stay
     if (!document.querySelector('input[name="extendStay"]:checked')) {
