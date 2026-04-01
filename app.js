@@ -52,11 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!dateInput.value) flagField(dateInput);
 
     const timeInput = document.getElementById('moveOutTime');
-    if (!timeInput.value) {
-      flagField(timeInput);
-    } else if (timeInput.value > '11:00') {
-      flagField(timeInput);
-    }
+    if (!timeInput.value) flagField(timeInput);
 
     // 2. Extend stay
     if (!document.querySelector('input[name="extendStay"]:checked')) {
@@ -99,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Collect data & show success
     const data = {
       date: dateInput.value,
-      time: timeInput.value,
+      time: timeInput.options[timeInput.selectedIndex].text,
       extend: extendVal.value,
       extensionDuration: document.getElementById('extensionDuration').value || null,
       satisfaction: document.querySelector('input[name="satisfaction"]:checked').value,
