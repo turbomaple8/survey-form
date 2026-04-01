@@ -85,13 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!firstError) firstError = document.querySelector('input[name="cleaningOption"]').closest('.form-section');
     }
 
-    // Acknowledgment
-    const ack = document.getElementById('acknowledgeNotice');
-    if (!ack.checked) {
-      ack.closest('.checkbox-label').classList.add('error-highlight');
-      valid = false;
-      if (!firstError) firstError = ack.closest('.notice-section');
-    }
 
     if (!valid) {
       errorBanner.classList.add('visible');

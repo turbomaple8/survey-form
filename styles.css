@@ -215,26 +215,6 @@ select.field-error {
   margin-bottom: 0;
 }
 
-/* Checkbox */
-.checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: #222;
-}
-
-.checkbox-label input[type="checkbox"] {
-  margin-top: 2px;
-  accent-color: #333;
-  flex-shrink: 0;
-}
-
-.checkbox-label.error-highlight span {
-  color: #c00;
-}
 
 /* Error banner */
 .error-banner {
