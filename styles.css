@@ -80,6 +80,22 @@ h1 {
   margin-top: 4px;
 }
 
+.time-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-input-group input {
+  width: 120px;
+}
+
+.time-suffix {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
 input[type="date"],
 input[type="text"],
 input[type="time"],

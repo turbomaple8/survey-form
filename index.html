@@ -23,18 +23,10 @@
         </div>
         <div class="field">
           <label for="moveOutTime">Estimated move-out time <span class="req">*</span></label>
-          <select id="moveOutTime" name="moveOutTime" required>
-            <option value="">Select a time</option>
-            <option value="07:00">7:00 AM</option>
-            <option value="07:30">7:30 AM</option>
-            <option value="08:00">8:00 AM</option>
-            <option value="08:30">8:30 AM</option>
-            <option value="09:00">9:00 AM</option>
-            <option value="09:30">9:30 AM</option>
-            <option value="10:00">10:00 AM</option>
-            <option value="10:30">10:30 AM</option>
-            <option value="11:00">11:00 AM</option>
-          </select>
+          <div class="time-input-group">
+            <input type="text" id="moveOutTime" name="moveOutTime" placeholder="e.g. 9:30" required>
+            <span class="time-suffix">AM</span>
+          </div>
           <span class="field-hint">Latest move-out is 11:00 AM.</span>
         </div>
       </section>
