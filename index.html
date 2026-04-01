@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Move-Out & Deposit Return Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Move-Out & Deposit Return Form</h1>
+    <p class="intro">Please complete this form to begin your deposit return process. Under the lease, deposits are typically returned within 21 business days after move-out.</p>
+
+    <form id="moveOutForm" novalidate>
+
+      <!-- 1. Move-Out Date & Time -->
+      <section class="form-section">
+        <h2>1. Move-Out Date & Time</h2>
+        <div class="field">
+          <label for="moveOutDate">Move-out date <span class="req">*</span></label>
+          <input type="date" id="moveOutDate" name="moveOutDate" required>
+        </div>
+        <div class="field">
+          <label for="moveOutTime">Estimated move-out time <span class="req">*</span></label>
+          <select id="moveOutTime" name="moveOutTime" required>
+            <option value="">Select a time</option>
+            <option value="morning">Morning (8 AM - 12 PM)</option>
+            <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+            <option value="evening">Evening (4 PM - 7 PM)</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- 2. Extend Stay -->
+      <section class="form-section">
+        <h2>2. Would you like to extend your stay?</h2>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="extendStay" value="no" required>
+            <span>No</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="extendStay" value="yes">
+            <span>Yes</span>
+          </label>
+        </div>
+        <div class="field conditional" id="extensionField">
+          <label for="extensionDuration">How long would you like to extend? <span class="req">*</span></label>
+          <input type="text" id="extensionDuration" name="extensionDuration" placeholder="e.g., 2 weeks, 1 month">
+        </div>
+      </section>
+
+      <!-- 3. Satisfaction -->
+      <section class="form-section">
+        <h2>3. How satisfied were you with your stay?</h2>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="satisfaction" value="satisfied" required>
+            <span>Satisfied</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="satisfaction" value="average">
+            <span>Average</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="satisfaction" value="not-satisfied">
+            <span>Not satisfied</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 4. Referral -->
+      <section class="form-section">
+        <h2>4. Would you refer us to others or stay with us again?</h2>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="referral" value="yes" required>
+            <span>Yes</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="referral" value="no">
+            <span>No</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 5. Room Condition & Cleaning -->
+      <section class="form-section">
+        <h2>5. Room condition at move-out</h2>
+        <p class="section-desc">Please select one of the following options:</p>
+
+        <div class="cleaning-options">
+          <label class="cleaning-option">
+            <input type="radio" name="cleaningOption" value="self-clean" required>
+            <div class="option-body">
+              <strong>I will clean the room myself</strong>
+              <p>I will clean the room, provide fresh bed linens, and leave it in move-in ready condition.</p>
+            </div>
+          </label>
+          <label class="cleaning-option">
+            <input type="radio" name="cleaningOption" value="company-clean">
+            <div class="option-body">
+              <strong>I authorize a $150 deduction from my deposit</strong>
+              <p>The company will handle cleaning and fresh bed linens on my behalf. $150 will be deducted from my security deposit.</p>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Required Notice: Move-In Ready Condition -->
+      <section class="notice-section">
+        <h2>Required Notice - Please Read Carefully</h2>
+
+        <div class="notice-box">
+          <h3>What is "move-in ready" room condition?</h3>
+          <p>A move-in ready room is a room that does not require any further cleaning or preparation after you move out. Since your room is furnished, it must be left in a condition where the next tenant can move in immediately.</p>
+          <p>If, after inspection, a housekeeper needs to enter the room to prepare it for the next tenant, a <strong>$150 cleaning fee</strong> will be deducted from your deposit.</p>
+          <p>If you choose to clean the room yourself, we strongly recommend cleaning it thoroughly, placing new or fresh bed linens, taking clear photos afterward, and sending them to us to help avoid any cleaning-related charges.</p>
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="acknowledgeNotice" required>
+          <span>I have read and understand the move-in ready room condition requirements and the cleaning fee policy described above. <span class="req">*</span></span>
+        </label>
+      </section>
+
+      <!-- Error summary -->
+      <div class="error-banner" id="errorBanner">
+        Please complete all required fields before submitting.
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-area">
+        <button type="submit" class="btn-submit">Submit Form</button>
+        <p class="submit-note">You will receive a confirmation email after submission.</p>
+      </div>
+
+    </form>
+
+    <!-- Success -->
+    <div class="success-screen" id="successScreen">
+      <h2>Form submitted successfully</h2>
+      <p>Thank you. A confirmation has been sent to your email. Your deposit will be processed within 21 business days following your move-out date.</p>
+      <div class="summary" id="summary"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
