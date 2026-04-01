@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Collect data & show success
     const data = {
       date: dateInput.value,
-      time: timeInput.options[timeInput.selectedIndex].text,
+      time: timeInput.value,
       extend: extendVal.value,
       extensionDuration: document.getElementById('extensionDuration').value || null,
       satisfaction: document.querySelector('input[name="satisfaction"]:checked').value,
